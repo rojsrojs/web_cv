@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>$title</title>
+<style>
+  @font-face { font-family: "Inter"; src: url("assets/fonts/inter-latin-wght.woff2") format("woff2"); font-weight: 100 900; }
+  @page { size: A4; margin: 0; }
+  :root { --accent: $accent_color; --text: #18222d; --muted: #5d6874; --line: #dfe4ea; --side: #f3f6f9; }
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { margin: 0; background: #fff; }
+  body { font: 8.7pt/1.38 "Inter", system-ui, "Segoe UI", sans-serif; color: var(--text); }
+  a { color: inherit; text-decoration: none; }
+  p { margin: 0; }
+
+  .page { width: 210mm; height: 297mm; }
+
+  header { display: flex; align-items: center; gap: 7mm; padding: 8mm 13mm 5.5mm; border-bottom: 1.2mm solid var(--accent); }
+  header img { width: 27mm; height: 27mm; border-radius: 50%; object-fit: cover; flex: none; }
+  header h1 { margin: 0; font-size: 25pt; line-height: 1.05; letter-spacing: -.02em; }
+  header .role { margin: 1.5mm 0 3mm; font-size: 12pt; font-weight: 600; color: var(--accent); }
+  header ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 1mm 6mm; color: var(--muted); font-size: 8.8pt; }
+
+  .main { padding: 6mm 13mm; }
+  /* The side box floats top-right and ends where its content ends. Text lines wrap around it like
+     in a magazine and run full width below it, so no empty strip is left under the box. The white
+     shadow to its left hides the job separator lines in the gap between text and box. */
+  aside {
+    float: right; width: 58mm; margin: 0 0 3mm 7mm; padding: 4.5mm 5.5mm; font-size: 8.2pt;
+    background: var(--side); border-radius: 3mm; box-shadow: -7mm 0 0 0 #fff;
+  }
+  aside section + section { margin-top: 4mm; }
+  aside .note { color: var(--muted); font-size: 7.8pt; margin-top: .5mm; }
+  aside .sub { font-size: 7.8pt; }
+
+  h2 { margin: 0 0 2.2mm; font-size: 10.3pt; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+  section + section { margin-top: 4.5mm; }
+  .summary { font-size: 9.2pt; }
+
+  .item { padding: 0 0 1.9mm; margin-bottom: 1.9mm; border-bottom: .2mm solid var(--line); break-inside: avoid; }
+  .item:last-child { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
+  .item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 3mm; }
+  .item h3 { margin: 0; font-size: 9.8pt; }
+  .item h3 .org { font-weight: 600; color: var(--accent); }
+  .when { color: var(--muted); font-size: 8.2pt; white-space: nowrap; }
+  .sub { color: var(--muted); font-size: 8.2pt; margin: .3mm 0 1mm; }
+  .tech { color: var(--muted); font-size: 7.9pt; margin-top: .8mm; }
+  .bullets { margin: .8mm 0 0; padding-left: 4mm; }
+  .bullets li { margin: .2mm 0; }
+
+  aside .item h3 { font-size: 9.2pt; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <img src="$avatar_src" alt="$avatar_alt">
+    <div>
+      <h1>$name</h1>
+      <p class="role">$role</p>
+      <ul>$contact</ul>
+    </div>
+  </header>
+
+  <div class="main">
+    <aside>
+      <section>
+        <h2>Education</h2>$education
+      </section>
+      <section>
+        <h2>Languages</h2>
+        <p>$languages</p>
+      </section>
+    </aside>
+    <section>
+      <h2>Profile</h2>
+      <p class="summary">$summary</p>
+    </section>
+    <section>
+      <h2>Experience</h2>$experience
+    </section>
+  </div>
+</div>
+</body>
+</html>

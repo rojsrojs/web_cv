@@ -1,0 +1,438 @@
+{
+  "site": {
+    "layout": "sidebar",
+    "accent": "blue",
+    "title": "Daniel Odin · Data Engineer",
+    "description": "Daniel Odin is a data engineer in Gothenburg, Sweden, specialised in Scala, Spark and cloud platforms.",
+    "pdfFile": "Daniel_Odin_CV.pdf"
+  },
+  "basics": {
+    "name": "Daniel Odin",
+    "title": "Data Engineer",
+    "location": "Gothenburg, Sweden",
+    "linkedin": {
+      "url": "https://www.linkedin.com/in/danielodin",
+      "label": "linkedin.com/in/danielodin"
+    },
+    "avatar": {
+      "src": "assets/img/avatar.jpg",
+      "alt": "Daniel Odin"
+    },
+    "banner": {
+      "src": "assets/img/banner.jpg",
+      "alt": "Daniel on a mountain top above beaches and fjords in Lofoten, Norway"
+    }
+  },
+  "about": {
+    "lead": "Daniel is a data engineer with a software engineer's mindset. He builds data pipelines and platforms as maintainable code, made to run reliably in production.",
+    "paragraphs": [
+      "For more than four years he worked on Apple Maps, starting with backend services and REST APIs in Scala. He then built and owned large-scale Spark and Flink pipelines, running daily with direct impact on production and the users of Apple Maps. Today he uses that experience to help clients understand their data, turning raw data into intuitive reports in Microsoft Fabric and Azure.",
+      "A lifelong interest in mathematics and problem solving took him from mathematical statistics at the University of Gothenburg to an MSc in Computer Science at Chalmers, focusing on algorithms and machine learning.",
+      "Daniel is curious, open-minded and eager to learn new things. He works well both on his own and in groups, but prefers working in a team. He believes that working together is the best way to solve problems."
+    ],
+    "portrait": {
+      "src": "assets/img/portrait.jpg",
+      "alt": "Daniel Odin smiling with his arms crossed"
+    },
+    "facts": [
+      {
+        "label": "Based in",
+        "value": "Gothenburg"
+      },
+      {
+        "label": "Working with data since",
+        "value": "2017"
+      },
+      {
+        "label": "Education",
+        "value": "MSc, Chalmers"
+      },
+      {
+        "label": "Languages",
+        "value": "Swedish, English"
+      }
+    ]
+  },
+  "pdfSummary": "Data engineer with a software engineer's mindset and an MSc in Computer Science from Chalmers. At Apple Maps he built and owned large-scale Spark and Flink pipelines with direct production impact; today he helps clients turn raw data into intuitive reports in Microsoft Fabric and Azure. Curious, eager to learn and at his best in a team.",
+  "capabilities": [
+    {
+      "title": "Data pipelines",
+      "text": "Large-scale Spark and Flink pipelines running daily in production at Apple Maps.",
+      "tools": [
+        "Apache Spark",
+        "Apache Flink",
+        "Kafka"
+      ]
+    },
+    {
+      "title": "Software engineering",
+      "text": "More than four years of functional Scala at Apple Maps, including backend services and REST APIs.",
+      "tools": [
+        "Scala",
+        "Python",
+        "SQL"
+      ]
+    },
+    {
+      "title": "Cloud",
+      "text": "Data platforms in Microsoft Fabric and Azure, from raw data to intuitive reports.",
+      "tools": [
+        "Microsoft Fabric",
+        "Azure"
+      ]
+    },
+    {
+      "title": "Machine learning",
+      "text": "Statistics at the Swedish Hip Arthroplasty Register, deep learning at Zenuity and Volvo Cars, and MLOps for computer vision at Trafikverket."
+    }
+  ],
+  "languages": [
+    "Swedish",
+    "English"
+  ],
+  "interests": {
+    "text": "Outside work, Daniel is usually on the move: climbing, hiking, and, in winter, snowboarding above everything else. Off the mountain he likes board games, escape rooms, Nintendo games, and watching ice hockey (especially HV71).",
+    "items": [
+      {
+        "image": "assets/img/climbing.jpg",
+        "alt": "Daniel in a blue helmet and harness, smiling on a rocky crag as he is about to be lowered off the route"
+      },
+      {
+        "image": "assets/img/snowboard.jpg",
+        "alt": "Daniel holding his snowboard on a sunny slope above the clouds"
+      },
+      {
+        "image": "assets/img/lofoten.jpg",
+        "alt": "Daniel on a summit in Lofoten, Norway"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "role": "Data Engineer",
+      "org": "Xenit",
+      "start": "2026-08",
+      "end": null,
+      "location": "Gothenburg",
+      "summary": "Daniel works across the whole data chain for Xenit's clients: from pipelines in Microsoft Fabric, powered by Spark, to the Power BI reports at the end of the line. The goal is to make the clients' data useful, with automated reports.",
+      "highlights": [
+        "Builds data pipelines in Microsoft Fabric with Spark, Python and SQL.",
+        "Develops and automates Power BI reports.",
+        "Helps clients make sense of their data."
+      ],
+      "tech": [
+        "Microsoft Fabric",
+        "Apache Spark",
+        "Python",
+        "SQL",
+        "Power BI",
+        "Microsoft Azure"
+      ],
+      "pdfSummary": "Data pipelines in Microsoft Fabric (Spark) through to automated Power BI reports, helping clients make their data useful."
+    },
+    {
+      "role": "MLOps Engineer",
+      "org": "Trafikverket",
+      "via": "AFRY",
+      "start": "2025-12",
+      "end": "2026-06",
+      "location": "Gothenburg",
+      "summary": "Part of a computer vision team working on digital inspection of railways, developing models that detect damage to the tracks. Daniel built the pipelines and workflows that test and validate trained models before they are deployed to production.",
+      "tech": [
+        "Python",
+        "Computer vision",
+        "Data pipelines",
+        "OpenShift",
+        "Linux",
+        "PostgreSQL",
+        "Streamlit",
+        "DVC"
+      ],
+      "pdfSummary": "Built pipelines and workflows that test and validate computer vision models for detecting railway damage before they are deployed to production."
+    },
+    {
+      "role": "Data Engineer (Scala)",
+      "org": "Apple Maps",
+      "via": "AFRY",
+      "start": "2023-04",
+      "end": "2025-12",
+      "location": "Malmö",
+      "summary": "Daniel built and maintained large-scale pipelines in Spark and Flink for web-scraped data, and was responsible for several daily pipelines with high impact on production and end users.",
+      "highlights": [
+        "Developed applications running on Kubernetes.",
+        "Built solutions that load and transform data into Apache Iceberg.",
+        "Interviewed candidates in the recruitment process, especially for machine learning roles."
+      ],
+      "tech": [
+        "Scala",
+        "Apache Spark",
+        "Apache Flink",
+        "Kafka",
+        "Apache Iceberg",
+        "Kubernetes",
+        "Docker",
+        "Grafana",
+        "Python"
+      ],
+      "pdfSummary": "Built and maintained large-scale Spark and Flink pipelines for web-scraped data.",
+      "pdfHighlights": [
+        "Built and owned several daily pipelines with high impact on production and end users.",
+        "Built applications running on Kubernetes and loaded data into Apache Iceberg.",
+        "Interviewed candidates, especially for machine learning roles."
+      ]
+    },
+    {
+      "role": "Data Scientist",
+      "org": "Volvo Cars",
+      "via": "AFRY",
+      "start": "2022-05",
+      "end": "2023-03",
+      "location": "Gothenburg (remote)",
+      "summary": "A feasibility study on forecasting brake squeal with deep learning, comparing forecasting techniques including the Transformer-based Informer architecture. The AFRY team built an end-to-end test framework that made it easy to compare models and run hyperparameter optimisation.",
+      "highlights": [
+        "Analysed and forecast brake squeal time series.",
+        "Planned and presented results together with the client, including two presentations for around 100 people at Volvo Cars."
+      ],
+      "tech": [
+        "PyTorch",
+        "Azure ML",
+        "MLflow",
+        "DVC",
+        "Docker",
+        "Streamlit",
+        "Pandas",
+        "Polars",
+        "ARIMA"
+      ],
+      "pdfSummary": "Forecast brake squeal with deep learning (incl. the Transformer-based Informer) in an end-to-end framework for comparing models and tuning hyperparameters.",
+      "pdfHighlights": [
+        "Presented the results twice for around 100 people at Volvo Cars."
+      ]
+    },
+    {
+      "role": "Software Engineer (Scala)",
+      "org": "Apple Maps",
+      "via": "AFRY",
+      "start": "2020-10",
+      "end": "2022-05",
+      "location": "Malmö",
+      "summary": "Daniel worked in two teams: a large Scrum team validating large geospatial datasets, and a newly started web scraping team, where he built backend REST APIs for a scraping tool, using the GitHub APIs and PostgreSQL. He also supported other teams with web scraping.",
+      "highlights": [
+        "Developed mostly in Scala (circe, http4s, cats, cats-effect), and also in TypeScript, Java and Python."
+      ],
+      "tech": [
+        "Scala",
+        "http4s",
+        "cats-effect",
+        "PostgreSQL",
+        "REST",
+        "TypeScript",
+        "Java",
+        "Python"
+      ],
+      "pdfSummary": "Worked in two teams: validating large geospatial datasets, and building backend REST APIs for a web scraping tool, using the GitHub APIs and PostgreSQL.",
+      "pdfHighlights": [
+        "Developed mostly in Scala (circe, http4s, cats, cats-effect), and also in TypeScript, Java and Python.",
+        "Supported other teams with web scraping."
+      ]
+    },
+    {
+      "role": "Master's Thesis",
+      "org": "Zenuity",
+      "start": "2020-01",
+      "end": "2020-06",
+      "location": "Gothenburg",
+      "summary": "Camera-LiDAR Active Learning for Object Detecting Deep Neural Networks. Together with his thesis partner, Daniel developed an algorithm that chooses which data a human should annotate (active learning) for 3D object detection, using ResNet-based deep learning models with LiDAR point clouds and camera images as input.",
+      "highlights": [
+        "Presented the work at Chalmers and at Zenuity for 50–100 people."
+      ],
+      "tech": [
+        "Python",
+        "TensorFlow",
+        "Deep learning",
+        "Git"
+      ],
+      "pdfSummary": "Active learning for 3D object detection with camera and LiDAR data (ResNet-based deep learning)."
+    },
+    {
+      "role": "Statistician",
+      "org": "Swedish Hip Arthroplasty Register",
+      "start": "2017-02",
+      "end": "2019-08",
+      "location": "Gothenburg",
+      "summary": "Daniel started as an R programmer writing scripts for figures and tables, worked as a statistician alongside his studies, and came back for a summer in 2019. He developed the R backend for the register's statistical visualisation, mostly a module that lets hip implant manufacturers follow market shares and outcomes for their implants.",
+      "highlights": [
+        "Made all figures for the 2016 and 2017 annual reports and automated the process for the years after.",
+        "Co-authored five scientific papers (see Publications).",
+        "Helped other statisticians with programming and introduced new colleagues to the register's statistical environment."
+      ],
+      "tech": [
+        "R",
+        "Statistics",
+        "Data visualisation"
+      ],
+      "pdfSummary": "Built the R backend for statistical visualisation of hip implant outcomes and automated the figures for the annual reports.",
+      "pdfHighlights": [
+        "Co-authored five scientific papers in Acta Orthopaedica."
+      ]
+    }
+  ],
+  "earlierExperience": {
+    "items": [
+      {
+        "role": "Shop Assistant",
+        "org": "ICA Kvantum",
+        "start": "2016-06",
+        "end": "2016-08",
+        "text": "Kept the fruit and vegetables stocked and fresh, and worked as a cashier."
+      },
+      {
+        "role": "Teaching Assistant",
+        "org": "University of Gothenburg",
+        "start": "2015-11",
+        "end": "2016-05",
+        "text": "Helped mathematics students with their homework."
+      },
+      {
+        "role": "Nursing Assistant",
+        "org": "TioHundra",
+        "start": "2015-06",
+        "end": "2015-08",
+        "text": "Home care, helping elderly people with everyday tasks."
+      },
+      {
+        "role": "Supply Teacher",
+        "org": "Gislaved Municipality",
+        "start": "2014-01",
+        "end": "2014-06",
+        "text": "Taught various subjects in middle school and lower secondary school."
+      },
+      {
+        "role": "Industrial Worker",
+        "org": "GA Emballage and Junic",
+        "start": "2013-09",
+        "end": "2014-06",
+        "text": "Pallet manufacturing, fabrication, sorting goods and blasting."
+      },
+      {
+        "role": "Gymnastics Coach",
+        "org": "GF Vigör",
+        "start": "2012",
+        "end": "2014",
+        "text": "Coached gymnastics for children and young people."
+      }
+    ]
+  },
+  "education": [
+    {
+      "degree": "MSc in Computer Science",
+      "school": "Chalmers University of Technology",
+      "start": "2018",
+      "end": "2020",
+      "location": "Gothenburg",
+      "text": "Master's programme Computer Science – Algorithms, Languages and Logic, with a focus on algorithms and machine learning. GPA 4.8/5.0.",
+      "note": "Thesis: Camera-LiDAR Active Learning for Object Detecting Deep Neural Networks (with Zenuity).",
+      "pdfSummary": "Algorithms, languages and logic, focus on machine learning. GPA 4.8/5.0."
+    },
+    {
+      "degree": "BSc in Mathematical Statistics",
+      "school": "University of Gothenburg",
+      "start": "2014",
+      "end": "2017",
+      "location": "Gothenburg",
+      "text": "Courses in mathematics, applied mathematics, mathematical statistics and programming.",
+      "note": "Bachelor's thesis on case-control analysis.",
+      "pdfSummary": "Mathematics, mathematical statistics and programming."
+    },
+    {
+      "degree": "Natural Science Programme",
+      "school": "Gislaved's Gymnasium",
+      "start": "2010",
+      "end": "2013",
+      "text": "Upper secondary school with a focus on natural sciences and mathematics.",
+      "pdf": false
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Hands On Essentials – Data Engineering",
+      "issuer": "Snowflake",
+      "year": "2023",
+      "url": "https://www.credly.com/badges/fcaa24aa-b947-4f9c-9ed1-f65a89b072b1"
+    },
+    {
+      "name": "Hands On Essentials – Data Lake",
+      "issuer": "Snowflake",
+      "year": "2022",
+      "url": "https://www.credly.com/badges/d9a09b1e-8f6d-4dce-b01b-c7cc629bd903"
+    },
+    {
+      "name": "Hands On Essentials – Data Applications",
+      "issuer": "Snowflake",
+      "year": "2022",
+      "url": "https://www.credly.com/badges/899d71ee-116c-4900-9ab1-1a1e4584c84d"
+    },
+    {
+      "name": "Functional Programming Principles in Scala",
+      "issuer": "Coursera (EPFL)",
+      "year": "2020",
+      "url": "https://www.coursera.org/account/accomplishments/certificate/JR3MT69LQESS"
+    },
+    {
+      "name": "Introduction to Data Science in Python",
+      "issuer": "Coursera (University of Michigan)",
+      "year": "2020",
+      "url": "https://www.coursera.org/account/accomplishments/certificate/H3DLCCYAQB36"
+    }
+  ],
+  "publications": {
+    "intro": "While working as a statistician at the Swedish Hip Arthroplasty Register, Daniel co-authored five papers in Acta Orthopaedica. One of them describes the online application for implant manufacturers, the platform whose statistical backend he worked on.",
+    "items": [
+      {
+        "authors": "Ferguson RJ, et al.",
+        "year": "2019",
+        "title": "ASA class is associated with early revision and reoperation after total hip arthroplasty: an analysis of the Geneva and Swedish Hip Arthroplasty Registries",
+        "journal": "Acta Orthopaedica",
+        "volume": "90(4)",
+        "pages": "324–330",
+        "doi": "10.1080/17453674.2019.1605785"
+      },
+      {
+        "authors": "Jolbäck P, et al.",
+        "year": "2019",
+        "title": "High annual surgeon volume reduces the risk of adverse events following primary total hip arthroplasty: a registry-based study of 12,100 cases in Western Sweden",
+        "journal": "Acta Orthopaedica",
+        "volume": "90(2)",
+        "pages": "153–158",
+        "doi": "10.1080/17453674.2018.1554418"
+      },
+      {
+        "authors": "Mohaddes M, et al.",
+        "year": "2019",
+        "title": "Implant survival and patient-reported outcome following total hip arthroplasty in patients 30 years or younger: a matched cohort study of 1,008 patients in the Swedish Hip Arthroplasty Register",
+        "journal": "Acta Orthopaedica",
+        "volume": "90(3)",
+        "pages": "249–252",
+        "doi": "10.1080/17453674.2019.1599776"
+      },
+      {
+        "authors": "Skoogh O, et al.",
+        "year": "2019",
+        "title": "Contemporary posterior surgical approach in total hip replacement: still more reoperations due to dislocation compared with direct lateral approach? An observational study of the Swedish Hip Arthroplasty Register including 156,979 hips",
+        "journal": "Acta Orthopaedica",
+        "volume": "90(5)",
+        "pages": "411–416",
+        "doi": "10.1080/17453674.2019.1610269"
+      },
+      {
+        "authors": "Vinblad J, et al.",
+        "year": "2019",
+        "title": "The development of an online implant manufacturer application: a knowledge-sharing platform for the Swedish Hip Arthroplasty Register",
+        "journal": "Acta Orthopaedica",
+        "volume": "90(4)",
+        "pages": "406–409",
+        "doi": "10.1080/17453674.2019.1608094"
+      }
+    ]
+  }
+}

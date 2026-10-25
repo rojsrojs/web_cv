@@ -1,0 +1,183 @@
+/* Shared by every layout: font, colour tokens (light/dark + accent), base elements, components. */
+
+@font-face {
+  font-family: "Inter";
+  src: url("fonts/inter-latin-wght.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  --bg: #f6f7f9; --surface: #ffffff; --text: #16202b; --muted: #5b6875; --line: #e3e7ec;
+  --shadow: 0 1px 2px rgba(16, 32, 48, .06), 0 8px 24px rgba(16, 32, 48, .06);
+  --on-accent: #ffffff;
+  --accent: #0f6fb8; --accent-soft: #e4f0fa;
+  --radius: 16px;
+  color-scheme: light;
+}
+:root[data-accent="green"]  { --accent: #2e7d5b; --accent-soft: #e5f1eb; }
+:root[data-accent="orange"] { --accent: #c2541b; --accent-soft: #fbe9dd; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e141b; --surface: #16202b; --text: #e8edf2; --muted: #9aa8b5; --line: #263341;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+    --on-accent: #0b1520;
+    --accent: #5cb3f5; --accent-soft: #1a2f43;
+    color-scheme: dark;
+  }
+  :root:not([data-theme="light"])[data-accent="green"]  { --accent: #6fcf9f; --accent-soft: #1b2e25; }
+  :root:not([data-theme="light"])[data-accent="orange"] { --accent: #f08a4b; --accent-soft: #3a2418; }
+}
+:root[data-theme="dark"] {
+  --bg: #0e141b; --surface: #16202b; --text: #e8edf2; --muted: #9aa8b5; --line: #263341;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+  --on-accent: #0b1520;
+  --accent: #5cb3f5; --accent-soft: #1a2f43;
+  color-scheme: dark;
+}
+:root[data-theme="dark"][data-accent="green"]  { --accent: #6fcf9f; --accent-soft: #1b2e25; }
+:root[data-theme="dark"][data-accent="orange"] { --accent: #f08a4b; --accent-soft: #3a2418; }
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.65 "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+img { display: block; max-width: 100%; }
+a { color: var(--accent); }
+h1, h2, h3 { line-height: 1.2; letter-spacing: -.01em; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.icon { width: 1.1em; height: 1.1em; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.icon.filled { fill: currentColor; stroke: none; }
+.icon-sun { display: none; }
+:root[data-theme="dark"] .icon-sun { display: inline; }
+:root[data-theme="dark"] .icon-moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .icon-sun { display: inline; }
+  :root:not([data-theme="light"]) .icon-moon { display: none; }
+}
+
+.btn {
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--text);
+  font: inherit; font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer; box-shadow: var(--shadow);
+}
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn:hover { filter: brightness(1.05); }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.tags li { background: var(--accent-soft); padding: 3px 12px; border-radius: 999px; font-size: 14px; }
+.tags.small li { font-size: 13px; padding: 2px 10px; }
+
+.dates { color: var(--muted); font-size: 14px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+/* The tabs only hide panels when JavaScript runs; without it every section shows. */
+[role="tabpanel"][hidden] { display: none; }
+[role="tabpanel"]:focus { outline: none; }
+
+/* ------------------------------------------------------------------ sections
+   Shared by all layouts. They adapt to the width of <main> (container queries), not the
+   window, so they work both full width and next to a sidebar. A layout sets --sticky-top
+   to keep the About photo below its own sticky elements. */
+
+main { container-type: inline-size; }
+main h2 { font-size: 24px; margin: 48px 0 16px; }
+.panel-title { font-size: 30px; margin: 0 0 24px; }
+
+/* About */
+.intro { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
+.lead { font-size: 21px; line-height: 1.5; font-weight: 600; margin-top: 0; }
+.lead.small { font-size: 18px; font-weight: 500; }
+.intro-photo { margin: 0; position: sticky; top: var(--sticky-top, 24px); }
+.intro-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
+
+.facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 40px 0 0; }
+.fact { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+.fact dt { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 600; }
+.fact dd { margin: 2px 0 0; font-size: 17px; font-weight: 700; }
+
+.capabilities { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.capability { padding: 18px 22px; border-top: 4px solid var(--accent); }
+.capability h3 { margin: 0 0 6px; font-size: 18px; }
+.capability p { margin: 0; color: var(--muted); }
+.capability .capability-tools { margin-top: 10px; color: var(--accent); font-weight: 600; font-size: 14px; }
+
+.interests-text { max-width: 70ch; }
+.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+.photo-card { overflow: hidden; }
+.photo-card img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.photo-card div { padding: 14px 16px 18px; }
+.photo-card h3 { margin: 0 0 4px; font-size: 17px; }
+.photo-card p { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* Experience */
+.timeline { list-style: none; margin: 0; padding: 0; }
+.job { display: grid; grid-template-columns: 170px 1fr; gap: 24px; position: relative; padding-bottom: 20px; }
+.job::before { content: ""; position: absolute; left: 186px; top: 26px; bottom: 0; width: 2px; background: var(--line); }
+.job::after { content: ""; position: absolute; left: 181px; top: 18px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--bg); }
+.job:last-child::before { display: none; }
+.job-when { display: flex; flex-direction: column; padding-top: 12px; text-align: right; }
+.job-when .place { color: var(--muted); font-size: 13px; }
+.job-card { padding: 20px 24px; margin-left: 24px; }
+.job-card h3, .edu-card h3 { margin: 0; font-size: 19px; }
+.job-org { margin: 2px 0 10px; font-weight: 600; color: var(--accent); }
+.job-org .via { color: var(--muted); font-weight: 500; }
+.job-card p { margin: 0 0 10px; }
+.highlights { margin: 0 0 14px; padding-left: 20px; }
+.highlights li { margin: 2px 0; }
+
+.earlier { list-style: none; margin: 0; padding: 4px 24px; }
+.earlier li { padding: 14px 0; border-bottom: 1px dashed var(--line); }
+.earlier li:last-child { border-bottom: 0; }
+.earlier-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 12px; }
+.earlier h3 { margin: 0; font-size: 16px; }
+.earlier h3 .org { font-weight: 400; color: var(--muted); }
+.earlier p { margin: 4px 0 0; color: var(--muted); font-size: 15px; }
+
+/* Education & publications */
+.edu-list { display: grid; gap: 16px; }
+.edu-card { padding: 20px 24px; }
+.edu-card p { margin: 0 0 8px; }
+.edu-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.note { color: var(--muted); font-size: 15px; }
+.certs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.certs li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; display: flex; flex-direction: column; }
+.cert-name { font-weight: 600; }
+.cert-meta { color: var(--muted); font-size: 14px; }
+.cert-link { margin-top: 6px; font-size: 14px; font-weight: 600; text-decoration: none; }
+.cert-link::after { content: " →"; }
+.cert-link:hover { text-decoration: underline; }
+
+.pubs { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 14px; }
+.pub { padding: 18px 22px; border-left: 4px solid var(--accent); }
+.pub h3 { margin: 0 0 6px; font-size: 17px; line-height: 1.4; }
+.pub-meta { margin: 0 0 6px; color: var(--muted); font-size: 15px; }
+.pub a { font-size: 14px; word-break: break-all; }
+
+@container (max-width: 860px) {
+  .facts { grid-template-columns: repeat(2, 1fr); }
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@container (max-width: 720px) {
+  .intro { grid-template-columns: 1fr; gap: 24px; }
+  .intro-photo { position: static; order: -1; max-width: 360px; }
+  .capabilities, .certs, .photo-grid { grid-template-columns: 1fr; }
+  .photo-card img { aspect-ratio: 1; }
+  .earlier { padding: 4px 18px; }
+  .job { grid-template-columns: 1fr; gap: 6px; padding-left: 24px; }
+  .job::before { left: 5px; top: 22px; }
+  .job::after { left: 0; top: 14px; }
+  .job-when { flex-direction: row; gap: 10px; text-align: left; padding-top: 6px; }
+  .job-card { margin-left: 0; padding: 16px 18px; }
+}
+
+@media print {
+  .no-print { display: none !important; }
+  [role="tabpanel"][hidden] { display: block; }
+  .card { box-shadow: none; }
+}
