@@ -24,11 +24,11 @@
     }
   },
   "about": {
-    "lead": "Daniel is a data engineer with a software engineer's mindset. He builds data pipelines and platforms as maintainable code, made to run reliably in production.",
+    "lead": "I'm a data engineer with a software engineer's mindset. I build data pipelines and platforms as maintainable code, made to run reliably in production.",
     "paragraphs": [
-      "For more than four years he worked on Apple Maps, starting with backend services and REST APIs in Scala. He then built and owned large-scale Spark and Flink pipelines, running daily with direct impact on production and the users of Apple Maps. Today he uses that experience to help clients understand their data, turning raw data into intuitive reports in Microsoft Fabric and Azure.",
-      "A lifelong interest in mathematics and problem solving took him from mathematical statistics at the University of Gothenburg to an MSc in Computer Science at Chalmers, focusing on algorithms and machine learning.",
-      "Daniel is curious, open-minded and eager to learn new things. He works well both on his own and in groups, but prefers working in a team. He believes that working together is the best way to solve problems."
+      "For more than four years I worked on Apple Maps, starting with backend services and REST APIs in Scala. I then built and owned large-scale Spark and Flink pipelines, running daily with direct impact on production and the users of Apple Maps. Today I use that experience to help clients understand their data, turning raw data into intuitive reports in Microsoft Fabric and Azure.",
+      "A lifelong interest in mathematics and problem solving took me from mathematical statistics at the University of Gothenburg to an MSc in Computer Science at Chalmers, focusing on algorithms and machine learning.",
+      "I am curious, open-minded and eager to learn new things. Working on my own or in a group suits me well, but I prefer working in a team. I believe that working together is the best way to solve problems."
     ],
     "portrait": {
       "src": "assets/img/portrait.jpg",
@@ -53,7 +53,7 @@
       }
     ]
   },
-  "pdfSummary": "Data engineer with a software engineer's mindset and an MSc in Computer Science from Chalmers. At Apple Maps he built and owned large-scale Spark and Flink pipelines with direct production impact; today he helps clients turn raw data into intuitive reports in Microsoft Fabric and Azure. Curious, eager to learn and at his best in a team.",
+  "pdfSummary": "Data engineer with a software engineer's mindset and an MSc in Computer Science from Chalmers. At Apple Maps I built and owned large-scale Spark and Flink pipelines with direct production impact. Today I help clients turn raw data into intuitive reports in Microsoft Fabric and Azure. Curious, eager to learn and at my best in a team.",
   "capabilities": [
     {
       "title": "Data pipelines",
@@ -91,7 +91,7 @@
     "English"
   ],
   "interests": {
-    "text": "Outside work, Daniel is usually on the move: climbing, hiking, and, in winter, snowboarding above everything else. Off the mountain he likes board games, escape rooms, Nintendo games, and watching ice hockey (especially HV71).",
+    "text": "Outside work, I'm usually on the move: climbing, hiking, and, in winter, snowboarding above everything else. Off the mountain I like board games, escape rooms, Nintendo games, and watching ice hockey (especially HV71).",
     "items": [
       {
         "image": "assets/img/climbing.jpg",
@@ -114,11 +114,11 @@
       "start": "2026-08",
       "end": null,
       "location": "Gothenburg",
-      "summary": "Daniel works across the whole data chain for Xenit's clients: from pipelines in Microsoft Fabric, powered by Spark, to the Power BI reports at the end of the line. The goal is to make the clients' data useful, with automated reports.",
+      "summary": "I work across the whole data chain for Xenit's clients: from pipelines in Microsoft Fabric, powered by Spark, to the Power BI reports at the end of the line. The goal is to make the clients' data useful, with automated reports.",
       "highlights": [
-        "Builds data pipelines in Microsoft Fabric with Spark, Python and SQL.",
-        "Develops and automates Power BI reports.",
-        "Helps clients make sense of their data."
+        "Build data pipelines in Microsoft Fabric with Spark, Python and SQL.",
+        "Develop and automate Power BI reports.",
+        "Help clients make sense of their data."
       ],
       "tech": [
         "Microsoft Fabric",
@@ -137,7 +137,7 @@
       "start": "2025-12",
       "end": "2026-06",
       "location": "Gothenburg",
-      "summary": "Part of a computer vision team working on digital inspection of railways, developing models that detect damage to the tracks. Daniel built the pipelines and workflows that test and validate trained models before they are deployed to production.",
+      "summary": "Part of a computer vision team working on digital inspection of railways, developing models that detect damage to the tracks. I built the pipelines and workflows that test and validate trained models before they are deployed to production.",
       "tech": [
         "Python",
         "Computer vision",
@@ -157,7 +157,7 @@
       "start": "2023-04",
       "end": "2025-12",
       "location": "Malmö",
-      "summary": "Daniel built and maintained large-scale pipelines in Spark and Flink for web-scraped data, and was responsible for several daily pipelines with high impact on production and end users.",
+      "summary": "I built and maintained large-scale pipelines in Spark and Flink for web-scraped data, and was responsible for several daily pipelines with high impact on production and end users.",
       "highlights": [
         "Developed applications running on Kubernetes.",
         "Built solutions that load and transform data into Apache Iceberg.",
@@ -216,7 +216,7 @@
       "start": "2020-10",
       "end": "2022-05",
       "location": "Malmö",
-      "summary": "Daniel worked in two teams: a large Scrum team validating large geospatial datasets, and a newly started web scraping team, where he built backend REST APIs for a scraping tool, using the GitHub APIs and PostgreSQL. He also supported other teams with web scraping.",
+      "summary": "I worked in two teams: a large Scrum team validating large geospatial datasets, and a newly started web scraping team, where I built backend REST APIs for a scraping tool, using the GitHub APIs and PostgreSQL. I also supported other teams with web scraping.",
       "highlights": [
         "Developed mostly in Scala (circe, http4s, cats, cats-effect), and also in TypeScript, Java and Python."
       ],
@@ -242,7 +242,7 @@
       "start": "2020-01",
       "end": "2020-06",
       "location": "Gothenburg",
-      "summary": "Camera-LiDAR Active Learning for Object Detecting Deep Neural Networks. Together with his thesis partner, Daniel developed an algorithm that chooses which data a human should annotate (active learning) for 3D object detection, using ResNet-based deep learning models with LiDAR point clouds and camera images as input.",
+      "summary": "Camera-LiDAR Active Learning for Object Detecting Deep Neural Networks. Together with my thesis partner, we developed an algorithm that chooses which data a human should annotate (active learning) for 3D object detection, using ResNet-based deep learning models with LiDAR point clouds and camera images as input.",
       "highlights": [
         "Presented the work at Chalmers and at Zenuity for 50–100 people."
       ],
@@ -260,7 +260,7 @@
       "start": "2017-02",
       "end": "2019-08",
       "location": "Gothenburg",
-      "summary": "Daniel started as an R programmer writing scripts for figures and tables, worked as a statistician alongside his studies, and came back for a summer in 2019. He developed the R backend for the register's statistical visualisation, mostly a module that lets hip implant manufacturers follow market shares and outcomes for their implants.",
+      "summary": "I started as an R programmer writing scripts for figures and tables, worked as a statistician alongside my studies, and came back for a summer in 2019. I developed the R backend for the register's statistical visualisation, mostly a module that lets hip implant manufacturers follow market shares and outcomes for their implants.",
       "highlights": [
         "Made all figures for the 2016 and 2017 annual reports and automated the process for the years after.",
         "Co-authored five scientific papers (see Publications).",
@@ -386,7 +386,7 @@
     }
   ],
   "publications": {
-    "intro": "While working as a statistician at the Swedish Hip Arthroplasty Register, Daniel co-authored five papers in Acta Orthopaedica. One of them describes the online application for implant manufacturers, the platform whose statistical backend he worked on.",
+    "intro": "While working as a statistician at the Swedish Hip Arthroplasty Register, I co-authored five papers in Acta Orthopaedica. One of them describes the online application for implant manufacturers, the platform whose statistical backend I worked on.",
     "items": [
       {
         "authors": "Ferguson RJ, et al.",

@@ -7,7 +7,7 @@ Project context for Claude Code. Respond in the language the user writes in (Swe
 Replace the CV on Overleaf with a website hosted on GitHub Pages, with a button that gives a PDF version. Same idea as the car comparison app in the parent folder: static page, data in a JSON file, published by a GitHub Actions workflow on every push to `main`.
 
 Status: built locally (layouts "hero" and "sidebar", currently sidebar; accent blue). `build.py` (stdlib only) turns `cv.json` into
-`_site/` and prints the PDF with headless Chrome/Edge. Writing style: third person, English.
+`_site/` and prints the PDF with headless Chrome/Edge. Writing style: first person, English.
 Layouts are swappable: `site.layout` → `templates/<layout>.html` + `assets/layouts/<layout>.css`.
 Rejected-for-now alternatives (sidebar, magazine) are in the gitignored `mockups/` folder.
 Photos: originals in gitignored `images/`; web copies without EXIF in `assets/img/`.
