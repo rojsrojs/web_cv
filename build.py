@@ -319,7 +319,7 @@ def main() -> None:
         private: Json = json.loads(args.private.read_text(encoding="utf-8"))
         page = out / "cv-print.html"
         page.write_text(render_print(cv, private.get("contact", [])), encoding="utf-8")
-        pdf_name = "cv-private.pdf"
+        pdf_name = cv["site"]["pdfFile"]
     else:
         (out / "index.html").write_text(render_site(cv), encoding="utf-8")
         page = out / "cv-print.html"
