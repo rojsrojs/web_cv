@@ -218,12 +218,10 @@
       "location": "Malmö",
       "summary": "I worked in two teams: a large Scrum team validating large geospatial datasets, and a newly started web scraping team, where I built backend REST APIs for a scraping tool, using the GitHub APIs and PostgreSQL. I also supported other teams with web scraping.",
       "highlights": [
-        "Developed mostly in Scala (circe, http4s, cats, cats-effect), and also in TypeScript, Java and Python."
+        "Developed mostly in Scala, and also in TypeScript, Java and Python."
       ],
       "tech": [
         "Scala",
-        "http4s",
-        "cats-effect",
         "PostgreSQL",
         "REST",
         "TypeScript",
@@ -232,7 +230,7 @@
       ],
       "pdfSummary": "Worked in two teams: validating large geospatial datasets, and building backend REST APIs for a web scraping tool, using the GitHub APIs and PostgreSQL.",
       "pdfHighlights": [
-        "Developed mostly in Scala (circe, http4s, cats, cats-effect), and also in TypeScript, Java and Python.",
+        "Developed mostly in Scala, and also in TypeScript, Java and Python.",
         "Supported other teams with web scraping."
       ]
     },
