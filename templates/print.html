@@ -19,6 +19,7 @@
   header img { width: 27mm; height: 27mm; border-radius: 50%; object-fit: cover; flex: none; }
   header h1 { margin: 0; font-size: 25pt; line-height: 1.05; letter-spacing: -.02em; }
   header .role { margin: 1.5mm 0 3mm; font-size: 12pt; font-weight: 600; color: var(--accent); }
+  header ul + ul { margin-top: 1mm; }
   header ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 1mm 6mm; color: var(--muted); font-size: 8.8pt; }
 
   .main { padding: 6mm 13mm; }
@@ -58,7 +59,7 @@
     <div>
       <h1>$name</h1>
       <p class="role">$role</p>
-      <ul>$contact</ul>
+      <ul>$contact</ul>$contact_private
     </div>
   </header>
 

@@ -192,6 +192,8 @@ def render_site(cv: Json) -> str:
         location=e(basics["location"]),
         linkedin_url=e(basics["linkedin"]["url"]),
         linkedin_label=e(basics["linkedin"]["label"]),
+        github_url=e(basics["github"]["url"]),
+        github_label=e(basics["github"]["label"]),
         avatar_src=e(basics["avatar"]["src"]),
         avatar_alt=e(basics["avatar"]["alt"]),
         banner_src=e(basics["banner"]["src"]),
@@ -212,9 +214,13 @@ def render_print(cv: Json, contact: list[Json]) -> str:
     basics: Json = cv["basics"]
     contact_items = [f"<li>{e(basics['location'])}</li>"]
     contact_items.append(f'<li><a href="{e(basics["linkedin"]["url"])}">{e(basics["linkedin"]["label"])}</a></li>')
+    contact_items.append(f'<li><a href="{e(basics["github"]["url"])}">{e(basics["github"]["label"])}</a></li>')
+    private_items: list[str] = []
     for c in contact:
         value = e(c["value"])
-        contact_items.append(f'<li><a href="{e(c["href"])}">{value}</a></li>' if c.get("href") else f"<li>{value}</li>")
+        private_items.append(f'<li><a href="{e(c["href"])}">{value}</a></li>' if c.get("href") else f"<li>{value}</li>")
+    # Private contact details (email, phone) go on their own second row under the public ones.
+    contact_private = f'<ul>{"".join(private_items)}</ul>' if private_items else ""
 
     jobs = "".join(
         f"""
@@ -247,6 +253,7 @@ def render_print(cv: Json, contact: list[Json]) -> str:
         avatar_src=e(basics["avatar"]["src"]),
         avatar_alt=e(basics["avatar"]["alt"]),
         contact="".join(contact_items),
+        contact_private=contact_private,
         summary=e(cv["pdfSummary"]),
         experience=jobs,
         education=schools,
