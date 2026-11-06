@@ -29,6 +29,17 @@ Json = dict[str, Any]
 ROOT: Final[Path] = Path(__file__).resolve().parent
 MONTHS: Final[tuple[str, ...]] = ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 ACCENTS: Final[dict[str, str]] = {"blue": "#0f6fb8", "green": "#2e7d5b", "orange": "#c2541b"}
+# Which icon a contact entry in private.json gets, by its "label" (case-insensitive).
+CONTACT_ICONS: Final[dict[str, str]] = {"email": "mail", "e-mail": "mail", "mail": "mail", "phone": "phone"}
+# Inner SVG (24 × 24 viewBox) for the link icons in the printable CV header.
+ICONS: Final[dict[str, str]] = {
+    "pin": '<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></g>',
+    "mail": '<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g>',
+    "phone": '<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></g>',
+    "globe": '<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></g>',
+    "linkedin": '<path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/>',
+    "github": '<path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.500 11.500 0 0 1 6 0C17.300 4.700 18.300 5 18.300 5c.7 1.700.2 2.900.1 3.200.8.800 1.200 1.900 1.200 3.200 0 4.600-2.800 5.600-5.500 5.900.4.400.8 1.100.8 2.200v3.300c0 .3.2.7.8.6A12 12 0 0 0 12 .300z"/>',
+}
 BROWSERS: Final[tuple[str, ...]] = ("google-chrome", "google-chrome-stable", "chromium", "chromium-browser", "msedge", "chrome")
 WINDOWS_BROWSERS: Final[tuple[str, ...]] = (
     r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
@@ -209,18 +220,37 @@ def render_site(cv: Json) -> str:
 
 # ---------------------------------------------------------------- printable CV
 
+def icon(name: str) -> str:
+    return f'<svg viewBox="0 0 24 24" aria-hidden="true">{ICONS[name]}</svg>'
+
+
 def render_print(cv: Json, contact: list[Json]) -> str:
     site: Json = cv["site"]
     basics: Json = cv["basics"]
-    contact_items = [f"<li>{e(basics['location'])}</li>"]
-    contact_items.append(f'<li><a href="{e(basics["linkedin"]["url"])}">{e(basics["linkedin"]["label"])}</a></li>')
-    contact_items.append(f'<li><a href="{e(basics["github"]["url"])}">{e(basics["github"]["label"])}</a></li>')
-    private_items: list[str] = []
+    location = f'<span>{icon("pin")}{e(basics["location"])}</span>'
+    # Public version: the location is a line under the role. Private version: it is the first row of
+    # a contact list (location, email, phone) next to the online links instead.
+    location_line = "" if contact else f'<p class="where">{location}</p>'
+    contact_items = [f"<li>{location}</li>"] if contact else []
     for c in contact:
-        value = e(c["value"])
-        private_items.append(f'<li><a href="{e(c["href"])}">{value}</a></li>' if c.get("href") else f"<li>{value}</li>")
-    # Private contact details (email, phone) go on their own second row under the public ones.
-    contact_private = f'<ul>{"".join(private_items)}</ul>' if private_items else ""
+        key = c.get("label", "").lower()
+        contact_items.append(
+            "<li><span>"
+            + (icon(CONTACT_ICONS[key]) if key in CONTACT_ICONS else "")
+            + (f'<a href="{e(c["href"])}">{e(c["value"])}</a>' if c.get("href") else e(c["value"]))
+            + "</span></li>"
+        )
+    contact_list = f'<ul class="contact">{"".join(contact_items)}</ul>' if contact_items else ""
+    # Right of the header: the online links, web version first.
+    links = [
+        ("globe", basics["website"], "Website: "),
+        ("linkedin", basics["linkedin"], ""),
+        ("github", basics["github"], ""),
+    ]
+    link_items = [
+        f'<li><a href="{e(link["url"])}">{icon(name)}{e(prefix)}{e(link["label"])}</a></li>'
+        for name, link, prefix in links
+    ]
 
     jobs = "".join(
         f"""
@@ -252,8 +282,9 @@ def render_print(cv: Json, contact: list[Json]) -> str:
         role=e(basics["title"]),
         avatar_src=e(basics["avatar"]["src"]),
         avatar_alt=e(basics["avatar"]["alt"]),
-        contact="".join(contact_items),
-        contact_private=contact_private,
+        contact_list=contact_list,
+        location_line=location_line,
+        links="".join(link_items),
         summary=e(cv["pdfSummary"]),
         experience=jobs,
         education=schools,

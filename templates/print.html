@@ -15,12 +15,17 @@
 
   .page { width: 210mm; height: 297mm; }
 
-  header { display: flex; align-items: center; gap: 7mm; padding: 8mm 13mm 5.5mm; border-bottom: 1.2mm solid var(--accent); }
+  header { display: flex; align-items: center; gap: 5mm; padding: 8mm 13mm 5.5mm; border-bottom: 1.2mm solid var(--accent); }
   header img { width: 27mm; height: 27mm; border-radius: 50%; object-fit: cover; flex: none; }
   header h1 { margin: 0; font-size: 25pt; line-height: 1.05; letter-spacing: -.02em; }
-  header .role { margin: 1.5mm 0 3mm; font-size: 12pt; font-weight: 600; color: var(--accent); }
-  header ul + ul { margin-top: 1mm; }
-  header ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 1mm 6mm; color: var(--muted); font-size: 8.8pt; }
+  header .role { margin: 1.5mm 0 0; font-size: 12pt; font-weight: 600; color: var(--accent); }
+  header .info { flex: 1; min-width: 0; }
+  header .info h1 { white-space: nowrap; }
+  /* Contact details and online links are two lists side by side with identical row spacing. */
+  header ul { list-style: none; margin: 0; padding: 0; flex: none; display: grid; gap: 2mm; color: var(--muted); font-size: 8.4pt; }
+  header ul span, header ul a, header .where span { display: inline-flex; align-items: center; gap: 2mm; white-space: nowrap; }
+  header .where { margin-top: 1.5mm; color: var(--muted); font-size: 8.4pt; }
+  header svg { width: 3.7mm; height: 3.7mm; flex: none; color: var(--accent); }
 
   .main { padding: 6mm 13mm; }
   /* The side box floats top-right and ends where its content ends. Text lines wrap around it like
@@ -56,11 +61,11 @@
 <div class="page">
   <header>
     <img src="$avatar_src" alt="$avatar_alt">
-    <div>
+    <div class="info">
       <h1>$name</h1>
-      <p class="role">$role</p>
-      <ul>$contact</ul>$contact_private
-    </div>
+      <p class="role">$role</p>$location_line
+    </div>$contact_list
+    <ul class="links">$links</ul>
   </header>
 
   <div class="main">

@@ -18,6 +18,10 @@
       "url": "https://github.com/rojsrojs",
       "label": "github.com/rojsrojs"
     },
+    "website": {
+      "url": "https://rojsrojs.github.io/web_cv/",
+      "label": "rojsrojs.github.io/web_cv"
+    },
     "avatar": {
       "src": "assets/img/avatar.jpg",
       "alt": "Daniel Odin"

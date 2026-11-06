@@ -26,8 +26,8 @@
 .profile { padding: 0 28px; margin-top: -64px; position: relative; }
 .avatar { width: 128px; height: 128px; border-radius: 50%; object-fit: cover; border: 4px solid var(--side-bg); box-shadow: 0 6px 20px rgba(0, 0, 0, .3); }
 .who h1 { margin: 14px 0 0; font-size: 28px; letter-spacing: -.02em; }
-.who .role { margin: 2px 0 0; color: var(--side-muted); font-size: 17px; }
-.meta { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 6px; font-size: 14px; color: var(--side-muted); }
+.who .role { margin: 2px 0 0; color: var(--side-text); font-size: 17px; }
+.meta { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 6px; font-size: 14px; color: var(--side-text); }
 .meta li, .meta a { display: inline-flex; align-items: center; gap: 8px; }
 .meta a { color: var(--side-text); text-decoration: none; }
 .meta a:hover { text-decoration: underline; }
